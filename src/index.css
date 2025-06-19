@@ -1,0 +1,21 @@
+@font-face {
+  font-family: SpaceMonoBold;
+  src: url("../src/assets/fonts/static/SpaceMono-Bold.ttf"), format("ttf");
+  font-weight: 700,
+}
+
+@import "tailwindcss";
+
+@theme {
+  --font-spacemono-bold: SpaceMonoBold, "sans-serif",
+}
+
+@theme {
+--color-custom-green-400: hsl(172, 67%, 45%);
+--color-custom-green-900: hsl(183, 100%, 15%);
+--color-custom-grey-500: hsl(186, 14%, 43%);
+--color-custom-grey-400: hsl(184, 14%, 56%);
+--color-custom-grey-200: hsl(185, 41%, 84%);
+--color-custom-grey-50: hsl(189, 47%, 97%);
+--color-custom-white: hsl(0, 100%, 100%);
+}
