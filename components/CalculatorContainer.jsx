@@ -1,9 +1,9 @@
 import React from "react"
-import TipCalculator from "./TipCalc"
+import TipCalculator from "./TipCalculator"
 
 const FormContainer = () => {
     return (
-        <div className="w-full flex flex-row justify-center min-h-screen items-center md:py-20 md:px-10">
+        <div className="flex flex-row justify-center min-h-screen md:items-center md:py-20 md:px-10">
             <TipCalculator></TipCalculator>
         </div>
     )
