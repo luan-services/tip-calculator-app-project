@@ -1,13 +1,13 @@
 @font-face {
   font-family: SpaceMonoBold;
-  src: url("../src/assets/fonts/static/SpaceMono-Bold.ttf"), format("ttf");
+  src: url("../src/assets/fonts/SpaceMono-Bold.ttf"), format("ttf");
   font-weight: 700,
 }
 
 @import "tailwindcss";
 
 @theme {
-  --font-spacemono-bold: SpaceMonoBold, "sans-serif",
+  --font-spacemono-bold: SpaceMonoBold, "sans-serif";
 }
 
 @theme {

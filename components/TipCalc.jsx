@@ -68,12 +68,10 @@ export default function TipCalculator() {
   const { tipAmount, total } = calculateTip();
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-cyan-100 py-10 px-4">
-      <h1 className="text-xl tracking-widest text-center mb-10 font-mono">SPLITTER</h1>
       <div className="bg-white p-8 rounded-3xl shadow-lg flex flex-col md:flex-row gap-8">
         <div className="flex-1 space-y-6">
           <div>
-            <label className="block text-sm font-semibold mb-1">Bill</label>
+            <label className="block text-sm mb-1">Bill</label>
             <input
               type="text"
               className="w-full p-2 rounded-md border border-cyan-400 text-right"
@@ -83,13 +81,13 @@ export default function TipCalculator() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold mb-2">Select Tip %</label>
+            <label className="block text-sm mb-2">Select Tip %</label>
             <div className="grid grid-cols-3 gap-2">
               {tipOptions.map((tip) => (
                 <button
                   key={tip}
                   onClick={() => handleTipClick(tip)}
-                  className={`p-2 rounded-md font-bold text-white transition ${
+                  className={`p-2 rounded-md text-white transition ${
                     tipPercent === tip ? 'bg-cyan-300 text-cyan-900' : 'bg-cyan-900 hover:bg-cyan-700'
                   }`}
                 >
@@ -107,7 +105,7 @@ export default function TipCalculator() {
           </div>
 
           <div>
-            <label className="block text-sm font-semibold mb-1">Number of People</label>
+            <label className="block text-sm mb-1">Number of People</label>
             <input
               type="text"
               inputMode="numeric"
@@ -141,12 +139,11 @@ export default function TipCalculator() {
           </div>
           <button
             onClick={reset}
-            className="mt-6 p-2 rounded-md bg-cyan-300 text-cyan-900 font-bold hover:bg-cyan-200"
+            className="mt-6 p-2 rounded-md bg-cyan-300 text-cyan-900 hover:bg-cyan-200"
           >
             RESET
           </button>
         </div>
       </div>
-    </div>
   );
 }
