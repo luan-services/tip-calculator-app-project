@@ -8,7 +8,6 @@ export default function TipCalculator() {
 	const [tipPercent, setTipPercent] = useState(null);
 	const [customTip, setCustomTip] = useState('');
 	const [people, setPeople] = useState('');
-	const [error, setError] = useState(false);
 
 	const tipOptions = [5, 10, 15, 25, 50];
 
@@ -36,9 +35,7 @@ export default function TipCalculator() {
 
 	const handlePeopleChange = (e) => {
 		const value = e.target.value.replace(/[^\d]/g, '');
-		const val = parseInt(value, 10);
 		setPeople(value);
-		setError(val === 0);
 	};
 
 	const parseInput = (input) => {
@@ -60,6 +57,7 @@ export default function TipCalculator() {
 		};
 	};
 
+	{/* reinicia todos os useState */}
 	const handleReset = () => {
 		setBill('');
 		setTipPercent(null);
@@ -68,7 +66,13 @@ export default function TipCalculator() {
 		setError(false);
 	};
 
+
+	{/* toda funcao que depende de outro useState não precisa ser necessariamente um useState,
+		nesse caso, toda vez que um dos três valores de useState são atualizados, o componente renderiza de novo
+		e roda as funções abaixo */}
 	const { tipAmount, total } = calculateTip();
+	
+	const error = parseInt(people) === 0;
 
 	return (
 		<div className="flex flex-col bg-white p-8 rounded-t-3xl md:rounded-3xl md:shadow-lg  max-w-112 md:max-w-188 md:flex-row gap-8">
